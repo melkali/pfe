@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>{% block title %}E-MedicalLaboratory{% endblock %}</title>
+		 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		{% block stylesheets %}
+		   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@0.5.3/dist/css/axentix.min.css">
+		{% endblock %}
+	</head>
+	<body  class="layout with-sidenav">
+		<!-- header --> 
+			<header>
+				<nav class="navbar primary">
+					<a href="#" target="_blank" class="navbar-brand">Axentix</a>
+					<div class="navbar-menu ml-auto">
+						<a class="navbar-link" href="#">Link 1</a>
+						<a class="navbar-link" href="#">Link 2</a>
+						<a class="navbar-link" href="#">Link 3</a>
+						<a class="navbar-link" href="#">Link 4</a>
+					</div>
+				</nav>
+			</header>
+ <div id="example-sidenav" class="sidenav large fixed white">
+      <div class="sidenav-header">
+        <button data-target="example-sidenav" class="sidenav-trigger"><i class="fas fa-times"></i></button>
+        <img class="logo dropshadow-1" src="your_img_path" alt="Logo" />
+      </div>
+      <a href="#" class="sidenav-link active">Link 1</a>
+      <a href="#" class="sidenav-link">Link 2</a>
+      <a href="#" class="sidenav-link">Link 3</a>
+      <a href="#" class="sidenav-link">Link 4</a>
+    </div>
+			<main>
+				<!-- Code here the main content -->
+				{% block body %} {% endblock %}
+			</main>
+
+			<footer class="footer primary">
+				Copyright © 2020 - Example
+			</footer>
+
+			{% block javascripts %}
+		<script src="https://cdn.jsdelivr.net/npm/axentix@0.5.3/dist/js/axentix.min.js"></script>
+    <script>
+        var sidenav = new Sidenav('#example-sidenav');
+    </script>
+			{% endblock %}
+
+	</body>
+</html>

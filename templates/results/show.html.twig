@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Results{% endblock %}
+
+{% block body %}
+    <h1>Results</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ result.id }}</td>
+            </tr>
+            <tr>
+                <th>Name_result</th>
+                <td>{{ result.nameResult }}</td>
+            </tr>
+            <tr>
+                <th>Content_result</th>
+                <td>{{ result.contentResult }}</td>
+            </tr>
+            <tr>
+                <th>Created_at</th>
+                <td>{{ result.createdAt ? result.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('results_index') }}">back to list</a>
+
+    <a href="{{ path('results_edit', {'id': result.id}) }}">edit</a>
+
+    {{ include('results/_delete_form.html.twig') }}
+{% endblock %}
