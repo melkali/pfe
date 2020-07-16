@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\AnalysisType;
+use App\Entity\AnalysisCategories;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method AnalysisType|null find($id, $lockMode = null, $lockVersion = null)
- * @method AnalysisType|null findOneBy(array $criteria, array $orderBy = null)
- * @method AnalysisType[]    findAll()
- * @method AnalysisType[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method AnalysisCategories|null find($id, $lockMode = null, $lockVersion = null)
+ * @method AnalysisCategories|null findOneBy(array $criteria, array $orderBy = null)
+ * @method AnalysisCategories[]    findAll()
+ * @method AnalysisCategories[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class AnalysisTypeRepository extends ServiceEntityRepository
+class AnalysisCategoriesRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, AnalysisType::class);
+        parent::__construct($registry, AnalysisCategories::class);
     }
 
     // /**
-    //  * @return AnalysisType[] Returns an array of AnalysisType objects
+    //  * @return AnalysisCategories[] Returns an array of AnalysisCategories objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class AnalysisTypeRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?AnalysisType
+    public function findOneBySomeField($value): ?AnalysisCategories
     {
         return $this->createQueryBuilder('a')
             ->andWhere('a.exampleField = :val')

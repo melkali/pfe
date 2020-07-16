@@ -1,0 +1,29 @@
+staff
+add user
+delete user
+update user
+show user
+
+patients
+add 
+delete
+update
+show
+
+results
+add
+delete
+update
+show
+
+reports
+add
+delete
+update
+show
+
+analysisCategories
+add
+delete
+update
+show

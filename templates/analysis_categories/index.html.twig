@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AnalysisCategories index{% endblock %}
+
+{% block body %}
+    <h1>AnalysisCategories index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Analysis_name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for analysis_category in analysis_categories %}
+            <tr>
+                <td>{{ analysis_category.id }}</td>
+                <td>{{ analysis_category.analysisName }}</td>
+                <td>
+                    <a href="{{ path('analysis_categories_show', {'id': analysis_category.id}) }}">show</a>
+                    <a href="{{ path('analysis_categories_edit', {'id': analysis_category.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('analysis_categories_new') }}">Create new</a>
+{% endblock %}

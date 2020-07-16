@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AnalysisCategories{% endblock %}
+
+{% block body %}
+    <h1>AnalysisCategories</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ analysis_category.id }}</td>
+            </tr>
+            <tr>
+                <th>Analysis_name</th>
+                <td>{{ analysis_category.analysisName }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('analysis_categories_index') }}">back to list</a>
+
+    <a href="{{ path('analysis_categories_edit', {'id': analysis_category.id}) }}">edit</a>
+
+    {{ include('analysis_categories/_delete_form.html.twig') }}
+{% endblock %}

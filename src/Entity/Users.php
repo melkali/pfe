@@ -43,10 +43,6 @@ class Users implements UserInterface
      */
     private $isVerified = false;
 
-    /**
-     * @ORM\OneToMany(targetEntity=AnalysisType::class, mappedBy="users")
-     */
-    private $analysistypes;
 
     /**
      * @ORM\OneToMany(targetEntity=Patients::class, mappedBy="users")
@@ -68,13 +64,34 @@ class Users implements UserInterface
      */
     private $results;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $firstName;
+
+    /**
+     * @ORM\OneToMany(targetEntity=AnalysisCategories::class, mappedBy="users")
+     */
+    private $analysiscategories;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Room::class, mappedBy="users")
+     */
+    private $rooms;
+
     public function __construct()
     {
-        $this->analysistypes = new ArrayCollection();
         $this->patients = new ArrayCollection();
         $this->payments = new ArrayCollection();
         $this->reports = new ArrayCollection();
         $this->results = new ArrayCollection();
+        $this->analysiscategories = new ArrayCollection();
+        $this->rooms = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -166,37 +183,7 @@ class Users implements UserInterface
 
         return $this;
     }
-
-    /**
-     * @return Collection|AnalysisType[]
-     */
-    public function getAnalysistypes(): Collection
-    {
-        return $this->analysistypes;
-    }
-
-    public function addAnalysistype(AnalysisType $analysistype): self
-    {
-        if (!$this->analysistypes->contains($analysistype)) {
-            $this->analysistypes[] = $analysistype;
-            $analysistype->setUsers($this);
-        }
-
-        return $this;
-    }
-
-    public function removeAnalysistype(AnalysisType $analysistype): self
-    {
-        if ($this->analysistypes->contains($analysistype)) {
-            $this->analysistypes->removeElement($analysistype);
-            // set the owning side to null (unless already changed)
-            if ($analysistype->getUsers() === $this) {
-                $analysistype->setUsers(null);
-            }
-        }
-
-        return $this;
-    }
+    
 
     /**
      * @return Collection|Patients[]
@@ -316,6 +303,92 @@ class Users implements UserInterface
             // set the owning side to null (unless already changed)
             if ($result->getUsers() === $this) {
                 $result->setUsers(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getFirstName(): ?string
+    {
+        return $this->firstName;
+    }
+
+    public function setFirstName(string $firstName): self
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|AnalysisCategories[]
+     */
+    public function getAnalysiscategories(): Collection
+    {
+        return $this->analysiscategories;
+    }
+
+    public function addAnalysiscategory(AnalysisCategories $analysiscategory): self
+    {
+        if (!$this->analysiscategories->contains($analysiscategory)) {
+            $this->analysiscategories[] = $analysiscategory;
+            $analysiscategory->setUsers($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAnalysiscategory(AnalysisCategories $analysiscategory): self
+    {
+        if ($this->analysiscategories->contains($analysiscategory)) {
+            $this->analysiscategories->removeElement($analysiscategory);
+            // set the owning side to null (unless already changed)
+            if ($analysiscategory->getUsers() === $this) {
+                $analysiscategory->setUsers(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Room[]
+     */
+    public function getRooms(): Collection
+    {
+        return $this->rooms;
+    }
+
+    public function addRoom(Room $room): self
+    {
+        if (!$this->rooms->contains($room)) {
+            $this->rooms[] = $room;
+            $room->setUsers($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRoom(Room $room): self
+    {
+        if ($this->rooms->contains($room)) {
+            $this->rooms->removeElement($room);
+            // set the owning side to null (unless already changed)
+            if ($room->getUsers() === $this) {
+                $room->setUsers(null);
             }
         }
 

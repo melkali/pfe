@@ -45,11 +45,6 @@ class Patients
     private $doctor;
 
     /**
-     * @ORM\OneToMany(targetEntity=AnalysisType::class, mappedBy="patients")
-     */
-    private $analysis_type;
-
-    /**
      * @ORM\OneToOne(targetEntity=Payments::class, inversedBy="patients", cascade={"persist", "remove"})
      */
     private $payment_sum;
@@ -72,9 +67,20 @@ class Patients
      */
     private $users;
 
+    /**
+     * @ORM\OneToMany(targetEntity=AnalysisCategories::class, mappedBy="patients")
+     */
+    private $analysiscategorie;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Room::class, inversedBy="patients")
+     */
+    private $room;
+
     public function __construct()
     {
         $this->analysis_type = new ArrayCollection();
+        $this->analysiscategorie = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -142,37 +148,6 @@ class Patients
         return $this;
     }
 
-    /**
-     * @return Collection|AnalysisType[]
-     */
-    public function getAnalysisType(): Collection
-    {
-        return $this->analysis_type;
-    }
-
-    public function addAnalysisType(AnalysisType $analysisType): self
-    {
-        if (!$this->analysis_type->contains($analysisType)) {
-            $this->analysis_type[] = $analysisType;
-            $analysisType->setPatients($this);
-        }
-
-        return $this;
-    }
-
-    public function removeAnalysisType(AnalysisType $analysisType): self
-    {
-        if ($this->analysis_type->contains($analysisType)) {
-            $this->analysis_type->removeElement($analysisType);
-            // set the owning side to null (unless already changed)
-            if ($analysisType->getPatients() === $this) {
-                $analysisType->setPatients(null);
-            }
-        }
-
-        return $this;
-    }
-
     public function getPaymentSum(): ?Payments
     {
         return $this->payment_sum;
@@ -217,6 +192,49 @@ class Patients
     public function setUsers(?Users $users): self
     {
         $this->users = $users;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|AnalysisCategories[]
+     */
+    public function getAnalysiscategorie(): Collection
+    {
+        return $this->analysiscategorie;
+    }
+
+    public function addAnalysiscategorie(AnalysisCategories $analysiscategorie): self
+    {
+        if (!$this->analysiscategorie->contains($analysiscategorie)) {
+            $this->analysiscategorie[] = $analysiscategorie;
+            $analysiscategorie->setPatients($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAnalysiscategorie(AnalysisCategories $analysiscategorie): self
+    {
+        if ($this->analysiscategorie->contains($analysiscategorie)) {
+            $this->analysiscategorie->removeElement($analysiscategorie);
+            // set the owning side to null (unless already changed)
+            if ($analysiscategorie->getPatients() === $this) {
+                $analysiscategorie->setPatients(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getRoom(): ?Room
+    {
+        return $this->room;
+    }
+
+    public function setRoom(?Room $room): self
+    {
+        $this->room = $room;
 
         return $this;
     }

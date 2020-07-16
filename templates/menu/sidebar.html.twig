@@ -1,38 +1,72 @@
-<aside class="menu is-hidden-mobile">
-    <p class="menu-label">
-        General
-    </p>
-    <ul class="menu-list">
-        <li><a class="is-active">Dashboard</a></li>
-        <li><a>Customers</a></li>
-        <li><a>Other</a></li>
-    </ul>
-    <p class="menu-label">
-        Administration
-    </p>
-    <ul class="menu-list">
-        <li><a>Team Settings</a></li>
-        <li>
-            <a>Manage Your Team</a>
-            <ul>
-                <li><a>Members</a></li>
-                <li><a>Plugins</a></li>
-                <li><a>Add a member</a></li>
-                <li><a>Remove a member</a></li>
-            </ul>
-        </li>
-        <li><a>Invitations</a></li>
-        <li><a>Cloud Storage Environment Settings</a></li>
-        <li><a>Authentication</a></li>
-        <li><a>Payments</a></li>
-    </ul>
-    <p class="menu-label">
-        Transactions
-    </p>
-    <ul class="menu-list">
-        <li><a>Payments</a></li>
-        <li><a>Transfers</a></li>
-        <li><a>Balance</a></li>
-        <li><a>Reports</a></li>
-    </ul>
-</aside>
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark profile-dd" href="javascript:void(0)" aria-expanded="false">
+                                <img src="../../assets/images/users/1.jpg" class="rounded-circle ml-2" width="30">
+                                <span class="hide-menu"> User Name
+</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item">
+                                    <a href="javascript:void(0)" class="sidebar-link">
+                                        <i class="ti-user"></i>
+                                        <span class="hide-menu"> My Profile </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="javascript:void(0)" class="sidebar-link">
+                                        <i class="ti-wallet"></i>
+                                        <span class="hide-menu"> My Balance </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="javascript:void(0)" class="sidebar-link">
+                                        <i class="ti-email"></i>
+                                        <span class="hide-menu"> Inbox </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="javascript:void(0)" class="sidebar-link">
+                                        <i class="ti-settings"></i>
+                                        <span class="hide-menu"> Account Setting </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="javascript:void(0)" class="sidebar-link">
+                                        <i class="fas fa-power-off"></i>
+                                        <span class="hide-menu"> Logout </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item">
+                                    <a href={{path('patients_index')}} class="sidebar-link">
+                                        <i class="mdi mdi-cart"></i>
+                                        <span class="hide-menu">Patients</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href={{path('payments_index')}} class="sidebar-link">
+                                        <i class="mdi mdi-cart"></i>
+                                        <span class="hide-menu">Payments</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href={{"path('results_index')"}} class="sidebar-link">
+                                        <i class="mdi mdi-cart"></i>
+                                        <span class="hide-menu">Results</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href={{path('reports_index')}} class="sidebar-link">
+                                        <i class="mdi mdi-cart"></i>
+                                        <span class="hide-menu">Reports</span>
+                                    </a>
+                                </li>

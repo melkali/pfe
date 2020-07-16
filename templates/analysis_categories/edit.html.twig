@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit AnalysisCategories{% endblock %}
+
+{% block body %}
+    <h1>Edit AnalysisCategories</h1>
+
+    {{ include('analysis_categories/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('analysis_categories_index') }}">back to list</a>
+
+    {{ include('analysis_categories/_delete_form.html.twig') }}
+{% endblock %}

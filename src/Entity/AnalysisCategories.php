@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\AnalysisTypeRepository;
+use App\Repository\AnalysisCategoriesRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=AnalysisTypeRepository::class)
+ * @ORM\Entity(repositoryClass=AnalysisCategoriesRepository::class)
  */
-class AnalysisType
+class AnalysisCategories
 {
     /**
      * @ORM\Id()
@@ -23,13 +23,13 @@ class AnalysisType
     private $analysis_name;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Patients::class, inversedBy="analysis_type")
+     * @ORM\ManyToOne(targetEntity=Patients::class, inversedBy="analysiscategorie")
      * @ORM\JoinColumn(nullable=false)
      */
     private $patients;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Users::class, inversedBy="analysistypes")
+     * @ORM\ManyToOne(targetEntity=Users::class, inversedBy="analysiscategories")
      * @ORM\JoinColumn(nullable=false)
      */
     private $users;
