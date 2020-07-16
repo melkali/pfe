@@ -12,11 +12,11 @@
 			{% block title %}E-MedicalLaboratory
 			{% endblock %}
 		</title>
-		<link rel="canonical" href="https://www.wrappixel.com/templates/ampleadmin/" />
+		
+		{% block stylesheets %}
+			<link rel="canonical" href="https://www.wrappixel.com/templates/ampleadmin/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
-		{% block stylesheets %}
-			
     <!-- chartist CSS -->
     <link href="https://ampleadmin.wrappixel.com/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="https://ampleadmin.wrappixel.com/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css" rel="stylesheet">
@@ -51,14 +51,14 @@
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
     <div id="main-wrapper">
-        <!-- ============================================================== -->
-			<div id="main-wrapper"> 
-			
+    <div id="main-wrapper">
+
 			{{  include ("menu/topbar.html.twig") }}
 			
 			{{  include ("menu/sidebar.html.twig") }}
 			{{  include ("menu/assidebar.html.twig") }}
-			
+			</div>
+      </div>
 			<!-- body -->
                     
                     <div class="page-wrapper">
@@ -71,6 +71,7 @@
                     </div>
                     </div>
                     {% block body %}{% endblock %}
+          
 
 			{{  include ("menu/footer.html.twig") }}
 
@@ -112,5 +113,5 @@
 
 			{% endblock %}
 		</body>
-	</body>
+	
 </html>

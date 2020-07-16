@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<meta
-		http-equiv="X-UA-Compatible" content="IE=edge">
-		<!-- Tell the browser to be responsive to screen width -->
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 4 admin, bootstrap 4, css3 dashboard, bootstrap 4 dashboard, ample admin bootstrap 4 dashboard, frontend, responsive bootstrap 4 admin template, material design, material dashboard bootstrap 4 dashboard template">
-		<meta name="description" content="Ample is powerful and clean admin dashboard template, inpired from Google's Material Design">
-		<meta name="robots" content="noindex,nofollow">
+		 <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Analytics Dashboard - This is an example dashboard created using build-in elements and components.</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <meta name="description" content="This is an example dashboard created using build-in elements and components.">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
 		<title>
 			{% block title %}E-MedicalLaboratory
 			{% endblock %}
@@ -54,27 +57,28 @@
 		<!-- ============================================================== -->
 		<!-- Main wrapper - style you can find in pages.scss -->
 		<!-- ============================================================== -->
-			<div
-			id="main-wrapper"> <!-- ============================================================== -->
+			<div id="main-wrapper">
 			<div id="main-wrapper">
 
 				{{  include ("./menu/topbar.html.twig") }}
 
 				{{  include ("./menu/sidebar.html.twig") }}
 				{{  include ("./menu/assidebar.html.twig") }}
-
+			</div>
+			</div>
 				<!-- body -->
 
-				<div class="page-wrapper">
-					<div class="page-breadcrumb border-bottom">
-						<div class="row">
-							<div class="col-lg-3 col-md-4 col-xs-12 justify-content-start d-flex align-items-center">
-								<div class="page-content container-fluid">
+			<div class="page-wrapper">
+                    <div class="page-breadcrumb border-bottom">
+                    <div class="row">
+                    <div class="col-lg-3 col-md-4 col-xs-12 justify-content-start d-flex align-items-center">
+                    <div class="page-content container-fluid">
+                    </div>
+                    </div>
+                    </div>
+                    </div>
                 {% block body %}{% endblock %}
-                </div>
-							</div>
-						</div>
-					</div>
+                
 					{{  include ("./menu/footer.html.twig") }}
 
 					{% block javascripts %}
