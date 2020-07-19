@@ -17,7 +17,7 @@
 				<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet"/>
 				<link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css"/>
 				<link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet"/>
-				<link href="https://startbootstrap.github.io/startbootstrap-creative/css/styles.css" rel="stylesheet"/>
+				<link href="{{ asset('css/style.css')}}" rel="stylesheet"/>
 			{% endblock %}
 		</head>
 		<body
@@ -54,6 +54,9 @@
 <div class="col-lg-8 align-self-baseline">
 	<p class="text-white-75 font-weight-light mb-5">The place where you can get your analyses results online!</p>
 	<a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+	<a href="{{path('patient_result')}}" class="btn btn-primary btn-xl js-scroll-trigger" >Get Your Result</a>
+
+
 </div></div></div></header><!-- About--><section class="page-section bg-primary" id="about"><div class="container"><div class="row justify-content-center">
 <div class="col-lg-8 text-center">
 	<h2 class="text-white mt-0">We've got what you need!</h2>
