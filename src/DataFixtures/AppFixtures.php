@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use App\Entity\Patients;
+use App\Entity\Room;
 use App\Entity\Users;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -15,18 +16,11 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         for ($i = 0; $i < 50; $i++) {
-            $patient = new Patients();
-            $patient->setNamePatient($i);
-            $patient->setFirstNamePatient($i);
-            $patient->setPhone(mt_rand(20000000, 99999999));
-            $patient->setDateBirth(new \DateTime('date'));
-            $patient->setDoctor($i);
-            $patient->setPaymentSum(mt_rand(10, 100));
-            $patient->setReportPatient($i);
-            $patient->setResultPatient($i);
-            $patient->setUsers('user '.$i);
-            $patient->setRoom($i);
-            $manager->persist($patient);
+            $room = new Room();
+            $room->setNameRoom($i);
+            $room->setAvailibityStatus($i);
+            $room->setUsers(mt_rand(1,20));
+            $manager->persist($room);
             $manager->flush();
     }
 }
